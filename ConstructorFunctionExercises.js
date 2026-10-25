@@ -112,4 +112,64 @@ const shape2=new Square(4);
 console.log(shape2.area());
 
 //7
+class Book{
+    constructor(title, author){
+        this.title=title;
+        this.author=author;
+    }
+    info(){
+        console.log(this.title,"by: ", this.author);
+    }
+}
+const B2=new Book("the warn","herman");
+B2.info();
 
+//8
+class Person{
+    constructor(name){
+        this.name=name;
+    }
+    greet(){
+        console.log("hello i am ", this.name);
+    }
+}
+
+class Student extends Person{
+    constructor(name,school){
+        super(name);
+        this.school=school;
+    }
+    study(){
+        console.log(this.name,"is studying at  ", this.school);
+    }
+}
+const stud1=new Student("alice","bney nor");
+stud1.study();
+stud1.greet()
+
+//9
+
+class Employee{
+    #salary;
+    constructor(salary){
+        this.#salary=salary;
+    }
+    salary(){
+        return this.#salary;
+    }
+    work(){
+        console.log("Employee is working");
+    }
+}
+
+class Manager extends Employee{
+    constructor(salary){
+        super(salary);
+    }
+    work(){
+        console.log("Manager is managing");
+    }
+}
+const man1=new Manager(1222);
+man1.work();
+console.log(man1.salary());
